@@ -18,7 +18,7 @@ export class MythixUITreeView extends MythixUIComponent {
     if (!$forEach)
       return;
 
-    $forEach.setAttribute('of', 'data');
+    $forEach.setAttribute('of', value);
   }
 
   createShadowDOM() {
@@ -76,7 +76,7 @@ export class MythixUITreeView extends MythixUIComponent {
     if (!event.relatedTarget || event.relatedTarget.nodeType !== Node.ELEMENT_NODE)
       return;
 
-    Utils.metadata(event.relatedTarget, 'mythix-tree-view:item', event.context.item)
+    Utils.metadata(event.relatedTarget, 'mythix-tree-view:item', event.context.item);
   }
 
   setItemTemplate(element) {
