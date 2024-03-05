@@ -1,6 +1,6 @@
 import {
   MythixUIComponent,
-  Components,
+  ComponentUtils,
   Utils,
 } from '@cdn/mythix-ui-core@1';
 
@@ -27,7 +27,7 @@ export class MythixUITreeView extends MythixUIComponent {
   mounted() {
     let tabIndex = this.attr('tabindex');
     if (Utils.isNOE(tabIndex)) {
-      tabIndex = Components.getLargestDocumentTabIndex() + 1;
+      tabIndex = ComponentUtils.getLargestDocumentTabIndex() + 1;
       this.attr('tabindex', tabIndex);
     }
 
