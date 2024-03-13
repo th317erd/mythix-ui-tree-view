@@ -1,7 +1,7 @@
 {
   "name": "mythix-ui-tree-view",
-  "version": "1.0.0",
-  "description": "A tabbed view component for Mythix UI",
+  "version": "0.0.9",
+  "description": "A tree view component for Mythix UI",
   "main": "dist/mythix-ui-tree-view.js",
   "type": "module",
   "directories": {

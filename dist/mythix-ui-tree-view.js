@@ -1,6 +1,7 @@
 import {
   MythixUIComponent,
   ComponentUtils,
+  BaseUtils,
   Utils,
 } from '@cdn/mythix-ui-core@1';
 
@@ -26,7 +27,7 @@ export class MythixUITreeView extends MythixUIComponent {
 
   mounted() {
     let tabIndex = this.attr('tabindex');
-    if (Utils.isNOE(tabIndex)) {
+    if (BaseUtils.isNOE(tabIndex)) {
       tabIndex = ComponentUtils.getLargestDocumentTabIndex() + 1;
       this.attr('tabindex', tabIndex);
     }
@@ -85,7 +86,7 @@ export class MythixUITreeView extends MythixUIComponent {
 
   renderItemChildren(item) {
     let children = item && item.children;
-    if (Utils.isNOE(children))
+    if (BaseUtils.isNOE(children))
       return '';
 
     let $forEach  = (this.ownerDocument || document).createElement('mythix-for-each');
@@ -104,7 +105,7 @@ export class MythixUITreeView extends MythixUIComponent {
   itemClasses(item) {
     let children = item && item.children;
     return this.classes({
-      'mythix-tree-view-has-children': Utils.isNotNOE(children),
+      'mythix-tree-view-has-children': BaseUtils.isNotNOE(children),
     });
   }
 
